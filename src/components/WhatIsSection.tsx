@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const pipelineSteps = [
   { label: "Ingest", description: "CSV, NumPy" },
-  { label: "Clean", description: "Impute, outliers" },
+  { label: "Clean", description: "NaN, outliers" },
   { label: "Reduce", description: "PCA, LDA" },
   { label: "Normalize", description: "Scale, center" },
   { label: "Encode", description: "Angle, basis" },
@@ -36,7 +36,7 @@ const WhatIsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="overflow-x-auto overflow-y-visible pb-4"
+          className="overflow-x-auto pb-4 pt-3"
         >
           <div className="flex items-center justify-center gap-2 md:gap-3 min-w-[640px] px-4">
             {pipelineSteps.map((step, i) => (
