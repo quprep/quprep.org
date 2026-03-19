@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const pipelineSteps = [
-  { label: "Ingest", description: "CSV, DataFrame, NumPy" },
+  { label: "Ingest", description: "CSV, NumPy" },
   { label: "Clean", description: "Impute, outliers" },
-  { label: "Reduce", description: "PCA, selection" },
-  { label: "Normalize", description: "Scale & center" },
-  { label: "Encode", description: "Angle, amplitude" },
+  { label: "Reduce", description: "PCA, LDA" },
+  { label: "Normalize", description: "Scale, center" },
+  { label: "Encode", description: "Angle, basis" },
   { label: "Export", description: "Qiskit, QASM" },
 ];
 
