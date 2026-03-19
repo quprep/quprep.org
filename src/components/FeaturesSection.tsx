@@ -1,0 +1,91 @@
+import { motion } from "framer-motion";
+import { Shuffle, Cpu, Sparkles, Grid3X3, Binary, Feather } from "lucide-react";
+
+const features = [
+  {
+    icon: Shuffle,
+    title: "Framework Agnostic",
+    description: "Qiskit and OpenQASM 3.0 in v0.1.0. PennyLane, Cirq, and TKET exporters coming in v0.2.0.",
+  },
+  {
+    icon: Sparkles,
+    title: "Smart Encoding",
+    description: "Auto-selects the correct normalizer per encoding today. Full encoding recommendation engine coming in v0.2.0.",
+  },
+  {
+    icon: Cpu,
+    title: "Hardware Aware",
+    description: "Hardware-aware dimensionality reduction for IBM, Google, IQM, and Quantinuum devices. Planned for v0.2.0.",
+  },
+  {
+    icon: Grid3X3,
+    title: "Multiple Encodings",
+    description: "Angle, Amplitude, and Basis in v0.1.0. IQP, Data Re-upload, and Hamiltonian encoders coming in v0.2.0.",
+  },
+  {
+    icon: Binary,
+    title: "QUBO Support",
+    description: "Convert optimization problems to QUBO/Ising format for QAOA and quantum annealing workflows. Planned for v0.3.0.",
+  },
+  {
+    icon: Feather,
+    title: "Lightweight",
+    description: "Core depends only on numpy, scipy, scikit-learn. Quantum frameworks are optional extras.",
+  },
+];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
+const FeaturesSection = () => {
+  return (
+    <section className="py-20 md:py-28" id="features">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
+            Features
+          </h2>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Everything you need to bridge classical data and quantum algorithms.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          {features.map((feature) => (
+            <motion.div
+              key={feature.title}
+              variants={item}
+              className="rounded-xl border border-border bg-card p-6 card-hover"
+            >
+              <div className="mb-3 inline-flex items-center justify-center rounded-lg bg-primary/10 p-2">
+                <feature.icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-base font-display font-semibold mb-1.5">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default FeaturesSection;
