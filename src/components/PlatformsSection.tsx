@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const platforms = [
-  { name: "IBM Qiskit", abbr: "Qk" },
-  { name: "Google Cirq", abbr: "Cq" },
-  { name: "Xanadu PennyLane", abbr: "PL" },
-  { name: "Quantinuum TKET", abbr: "Tk" },
-  { name: "Amazon Braket", abbr: "Bk" },
+  { name: "Qiskit", abbr: "Qk" },
+  { name: "Cirq", abbr: "Cq" },
+  { name: "PennyLane", abbr: "PL" },
+  { name: "TKET", abbr: "Tk" },
+  { name: "Braket", abbr: "Bk" },
   { name: "Azure Quantum", abbr: "Az" },
   { name: "IQM", abbr: "IQ" },
   { name: "D-Wave", abbr: "DW" },

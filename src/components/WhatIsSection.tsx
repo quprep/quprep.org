@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const pipelineSteps = [
-  { label: "Ingest", description: "CSV, JSON, DataFrame" },
-  { label: "Clean", description: "Missing values, outliers" },
-  { label: "Reduce", description: "PCA, feature selection" },
-  { label: "Normalize", description: "Scaling & centering" },
-  { label: "Encode", description: "Angle, amplitude, basis" },
-  { label: "Export", description: "Qiskit, Cirq, PennyLane" },
+  { label: "Ingest", description: "CSV, DataFrame, NumPy" },
+  { label: "Clean", description: "Impute, outliers" },
+  { label: "Reduce", description: "PCA, selection" },
+  { label: "Normalize", description: "Scale & center" },
+  { label: "Encode", description: "Angle, amplitude" },
+  { label: "Export", description: "Qiskit, QASM" },
 ];
 
 const WhatIsSection = () => {
@@ -42,7 +42,7 @@ const WhatIsSection = () => {
             {pipelineSteps.map((step, i) => (
               <div key={step.label} className="flex items-center gap-2 md:gap-3">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 md:w-24 rounded-lg border border-border bg-card p-3 card-hover">
+                  <div className="w-20 md:w-24 h-16 rounded-lg border border-border bg-card p-3 card-hover flex flex-col justify-center">
                     <div className="text-sm font-display font-semibold text-foreground">{step.label}</div>
                     <div className="text-[10px] text-muted-foreground mt-1 leading-tight">{step.description}</div>
                   </div>

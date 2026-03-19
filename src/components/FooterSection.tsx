@@ -38,7 +38,7 @@ const FooterSection = () => {
 
         <div className="mt-8 pt-6 border-t border-border text-center">
           <p className="text-xs text-muted-foreground">
-            Built by the quantum community.
+            Made with ♥ for the quantum community. Apache 2.0.
           </p>
         </div>
       </div>
