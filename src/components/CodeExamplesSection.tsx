@@ -40,18 +40,17 @@ print(result.circuit)`,
     label: "Recommend",
     code: `import quprep
 
-# Coming in v0.2.0
 rec = quprep.recommend(
     "dataset.csv",
     task="classification",
     qubits=8,
 )
 
-print(rec.encoding)   # "angle_ry"
-print(rec.n_qubits)   # 8
-print(rec.depth)      # 1
+print(rec.method)       # e.g. "iqp"
+print(rec.reason)       # human-readable explanation
+print(rec.alternatives) # ranked list of other options
 
-result = rec.apply(framework="qasm")`,
+result = rec.apply("dataset.csv")`,
   },
   {
     id: "qubo",

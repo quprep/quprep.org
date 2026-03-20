@@ -5,22 +5,22 @@ const features = [
   {
     icon: Shuffle,
     title: "Framework Agnostic",
-    description: "Qiskit and OpenQASM 3.0 in v0.1.0. PennyLane, Cirq, and TKET exporters coming in v0.2.0.",
+    description: "Export to OpenQASM 3.0, Qiskit, PennyLane, Cirq, and TKET. No lock-in — switch frameworks with one line.",
   },
   {
     icon: Sparkles,
     title: "Smart Encoding",
-    description: "Auto-selects the correct normalizer per encoding today. Full encoding recommendation engine coming in v0.2.0.",
+    description: "Auto-selects the correct normalizer per encoding. Recommendation engine scores all 7 encoders against your dataset and task.",
   },
   {
     icon: Cpu,
     title: "Hardware Aware",
-    description: "Hardware-aware dimensionality reduction for IBM, Google, IQM, and Quantinuum devices. Planned for v0.2.0.",
+    description: "Hardware-aware dimensionality reduction for IBM, Google, IQM, and Quantinuum devices. Automatically fits your qubit budget.",
   },
   {
     icon: Grid3X3,
     title: "Multiple Encodings",
-    description: "Angle, Amplitude, and Basis in v0.1.0. IQP, Data Re-upload, and Hamiltonian encoders coming in v0.2.0.",
+    description: "7 encoders: Angle, Amplitude, Basis, IQP, Entangled Angle, Data Re-uploading, and Hamiltonian. NISQ-safe options included.",
   },
   {
     icon: Binary,
