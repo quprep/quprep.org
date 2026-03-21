@@ -26,7 +26,7 @@ const HeroSection = () => {
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 mb-8">
-            <span className="text-xs font-mono text-primary font-medium">v0.2.0</span>
+            <span className="text-xs font-mono text-primary font-medium">v0.3.0</span>
             <span className="h-3 w-px bg-border" />
             <span className="text-xs text-muted-foreground">Open Source · Apache 2.0</span>
           </div>
