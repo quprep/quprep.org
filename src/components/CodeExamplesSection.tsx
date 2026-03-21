@@ -56,20 +56,19 @@ result = rec.apply("dataset.csv")`,
     id: "qubo",
     label: "QUBO",
     code: `import numpy as np
-import quprep
+from quprep.qubo import max_cut, solve_brute, qaoa_circuit
 
-# Coming in v0.3.0
-Q = np.array([
-    [-1,  2,  0],
-    [ 0, -3,  1],
-    [ 0,  0,  2],
-])
+# Max-Cut on a graph
+adj = np.array([[0,1,1],[1,0,1],[1,1,0]], dtype=float)
+q = max_cut(adj)
 
-qubo = quprep.to_qubo(Q)
-ising = qubo.to_ising()
+# Exact solver (n ≤ 20) or simulated annealing
+sol = solve_brute(q)
+print(sol.x)       # optimal binary vector
+print(sol.energy)  # -2.0
 
-print(ising.h)   # bias vector
-print(ising.J)   # coupling matrix`,
+# Generate a QAOA circuit (OpenQASM 3.0)
+qasm = qaoa_circuit(q, p=2)`,
   },
 ];
 

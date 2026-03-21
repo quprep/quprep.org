@@ -25,7 +25,7 @@ const features = [
   {
     icon: Binary,
     title: "QUBO Support",
-    description: "Convert optimization problems to QUBO/Ising format for QAOA and quantum annealing workflows. Planned for v0.3.0.",
+    description: "7 problem formulations (Max-Cut, TSP, Knapsack, Portfolio, and more), exact and SA solvers, QAOA circuit generation, and D-Wave export.",
   },
   {
     icon: Feather,
