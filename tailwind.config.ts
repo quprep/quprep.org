@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ["Ubuntu", "system-ui", "sans-serif"],
         sans: ["DM Sans", "system-ui", "sans-serif"],
         mono: ["Fira Code", "monospace"],
       },
