@@ -121,7 +121,7 @@ const QuickStartSection = () => {
           className="text-center mt-10"
         >
           <a
-            href="https://quprep.readthedocs.io"
+            href="https://docs.quprep.org"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-primary hover:underline"

@@ -33,7 +33,7 @@ const Navbar = () => {
           ))}
           <div className="flex items-center gap-2 ml-2 pl-4 border-l border-border">
             <a
-              href="https://quprep.readthedocs.io"
+              href="https://docs.quprep.org"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
@@ -87,7 +87,7 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex gap-4 pt-2 border-t border-border mt-1">
-            <a href="https://quprep.readthedocs.io" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground">Docs</a>
+            <a href="https://docs.quprep.org" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground">Docs</a>
             <a href="https://github.com/quprep/quprep" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground">GitHub</a>
           </div>
         </div>

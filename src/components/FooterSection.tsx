@@ -3,7 +3,7 @@ import { Github, BookOpen, Package, FileText, History } from "lucide-react";
 const footerLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/quprep/quprep" },
   { icon: Package, label: "PyPI", href: "https://pypi.org/project/quprep" },
-  { icon: BookOpen, label: "Documentation", href: "https://quprep.readthedocs.io" },
+  { icon: BookOpen, label: "Documentation", href: "https://docs.quprep.org" },
   { icon: FileText, label: "Contributing", href: "https://github.com/quprep/quprep/blob/main/CONTRIBUTING.md" },
   { icon: History, label: "Changelog", href: "https://github.com/quprep/quprep/blob/main/CHANGELOG.md" },
 ];
