@@ -3,11 +3,14 @@ import { Github, MessageCircle, Bug, Star, Copy, Check } from "lucide-react";
 import { useState } from "react";
 
 const bibtex = `@software{quprep2026,
-  title   = {QuPrep: Quantum Data Preparation},
-  author  = {Perera, Hasarindu},
-  url     = {https://github.com/quprep/quprep},
-  year    = {2026},
-  license = {Apache-2.0}
+  author    = {Perera, Hasarindu},
+  title     = {QuPrep: Quantum Data Preparation},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {0.4.0},
+  doi       = {10.5281/zenodo.19286258},
+  url       = {https://doi.org/10.5281/zenodo.19286258},
+  license   = {Apache-2.0},
 }`;
 
 const links = [

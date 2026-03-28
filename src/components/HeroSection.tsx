@@ -26,7 +26,7 @@ const HeroSection = () => {
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 mb-8">
-            <span className="text-xs font-mono text-primary font-medium">v0.3.0</span>
+            <span className="text-xs font-mono text-primary font-medium">v0.4.0</span>
             <span className="h-3 w-px bg-border" />
             <span className="text-xs text-muted-foreground">Open Source · Apache 2.0</span>
           </div>
@@ -50,7 +50,7 @@ const HeroSection = () => {
                 </div>
                 <span className="text-[11px] font-mono text-muted-foreground">terminal</span>
                 <button
-                  onClick={() => handleCopy('pip install quprep\n\nimport quprep\ncircuit = quprep.prepare("dataset.csv", encoding="angle", framework="qiskit")')}
+                  onClick={() => handleCopy('pip install quprep\n\nimport quprep as qd\ncircuit = qd.prepare("dataset.csv", encoding="angle", framework="qiskit")')}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
@@ -61,11 +61,16 @@ const HeroSection = () => {
                   <span className="text-accent">$</span> pip install quprep
                 </div>
                 <div className="mt-3 text-muted-foreground/50 text-xs">{"# Three lines to quantum-ready data"}</div>
-                <div><span className="text-primary">import</span> <span className="text-foreground">quprep</span></div>
+                <div>
+                  <span className="text-primary">import</span>
+                  <span className="text-foreground"> quprep </span>
+                  <span className="text-primary">as</span>
+                  <span className="text-foreground"> qd</span>
+                </div>
                 <div>
                   <span className="text-foreground">circuit</span>
                   <span className="text-muted-foreground"> = </span>
-                  <span className="text-foreground">quprep</span>
+                  <span className="text-foreground">qd</span>
                   <span className="text-muted-foreground">.</span>
                   <span className="text-foreground">prepare</span>
                   <span className="text-muted-foreground">(</span>

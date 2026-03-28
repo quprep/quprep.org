@@ -6,10 +6,10 @@ const tabs = [
   {
     id: "simple",
     label: "Simple",
-    code: `import quprep
+    code: `import quprep as qd
 
 # One-liner: CSV → quantum circuits
-result = quprep.prepare(
+result = qd.prepare(
     "dataset.csv",
     encoding="angle",
     framework="qasm",
@@ -21,15 +21,13 @@ print(result.circuits)  # all samples`,
   {
     id: "pipeline",
     label: "Pipeline",
-    code: `from quprep import Pipeline
-from quprep.clean.imputer import Imputer
-from quprep.encode.angle import AngleEncoder
-from quprep.export.qasm_export import QASMExporter
+    code: `import quprep as qd
 
-pipeline = Pipeline(
-    cleaner=Imputer(strategy="knn"),
-    encoder=AngleEncoder(rotation="ry"),
-    exporter=QASMExporter(),
+# All classes on the top-level namespace
+pipeline = qd.Pipeline(
+    cleaner=qd.Imputer(strategy="knn"),
+    encoder=qd.AngleEncoder(rotation="ry"),
+    exporter=qd.QASMExporter(),
 )
 
 result = pipeline.fit_transform("dataset.csv")
@@ -38,9 +36,9 @@ print(result.circuit)`,
   {
     id: "recommend",
     label: "Recommend",
-    code: `import quprep
+    code: `import quprep as qd
 
-rec = quprep.recommend(
+rec = qd.recommend(
     "dataset.csv",
     task="classification",
     qubits=8,
@@ -51,6 +49,29 @@ print(rec.reason)       # human-readable explanation
 print(rec.alternatives) # ranked list of other options
 
 result = rec.apply("dataset.csv")`,
+  },
+  {
+    id: "validate",
+    label: "Validate",
+    code: `import quprep as qd
+
+# Define expected schema
+schema = qd.DataSchema([
+    qd.FeatureSpec("age",    dtype="continuous", min_value=0),
+    qd.FeatureSpec("income", dtype="continuous", min_value=0),
+    qd.FeatureSpec("label",  dtype="discrete"),
+])
+
+# Attach to pipeline — validates before any stage runs
+pipeline = qd.Pipeline(
+    encoder=qd.AngleEncoder(),
+    schema=schema,
+)
+result = pipeline.fit_transform("dataset.csv")
+
+# Cost estimate + audit log included automatically
+print(result.cost.nisq_safe)   # True / False
+result.summary()               # aligned audit table`,
   },
   {
     id: "qubo",

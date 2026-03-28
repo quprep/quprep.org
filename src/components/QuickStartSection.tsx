@@ -15,10 +15,10 @@ pip install quprep[all]`,
   {
     step: 2,
     title: "Prepare data",
-    code: `import quprep
+    code: `import quprep as qd
 
 # Load and prepare your dataset
-result = quprep.prepare(
+result = qd.prepare(
     "my_data.csv",
     encoding="angle",
     framework="qasm",
@@ -29,10 +29,10 @@ print(result.circuit)`,
   {
     step: 3,
     title: "Export",
-    code: `# Save QASM circuits to disk
-from quprep.export.qasm_export import QASMExporter
+    code: `import quprep as qd
 
-exporter = QASMExporter()
+# All exporters are on the top-level namespace
+exporter = qd.QASMExporter()
 for i, enc in enumerate(result.encoded):
     exporter.save(enc, f"circuit_{i}.qasm")
 

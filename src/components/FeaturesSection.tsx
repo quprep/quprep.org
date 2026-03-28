@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shuffle, Cpu, Sparkles, Grid3X3, Binary, Feather } from "lucide-react";
+import { Shuffle, Cpu, Sparkles, Grid3X3, Binary, ShieldCheck } from "lucide-react";
 
 const features = [
   {
@@ -28,9 +28,9 @@ const features = [
     description: "7 problem formulations (Max-Cut, TSP, Knapsack, Portfolio, and more), exact and SA solvers, QAOA circuit generation, and D-Wave export.",
   },
   {
-    icon: Feather,
-    title: "Lightweight",
-    description: "Core depends only on numpy, scipy, scikit-learn. Quantum frameworks are optional extras.",
+    icon: ShieldCheck,
+    title: "Validation & Cost",
+    description: "Schema enforcement, per-column NaN reports, and formula-accurate circuit cost estimates (gate count, depth, NISQ-safe flag) — before encoding.",
   },
 ];
 
