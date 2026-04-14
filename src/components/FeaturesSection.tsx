@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { Shuffle, Cpu, Sparkles, Grid3X3, Binary, ShieldCheck } from "lucide-react";
+import { Shuffle, Cpu, Sparkles, Grid3X3, Binary, ShieldCheck, Database, Terminal, Layers } from "lucide-react";
 
 const features = [
   {
     icon: Shuffle,
     title: "Framework Agnostic",
-    description: "Export to OpenQASM 3.0, Qiskit, PennyLane, Cirq, and TKET. No lock-in — switch frameworks with one line.",
+    description: "Export to OpenQASM 3.0, Qiskit, PennyLane, Cirq, TKET, Amazon Braket, Q# (Azure Quantum), and IQM. No lock-in — switch frameworks with one line.",
   },
   {
     icon: Sparkles,
     title: "Smart Encoding",
-    description: "Auto-selects the correct normalizer per encoding. Recommendation engine scores all 7 encoders against your dataset and task.",
+    description: "Auto-selects the correct normalizer per encoding. Recommendation engine scores all 13 encoders against your dataset and task.",
   },
   {
     icon: Cpu,
@@ -19,18 +19,33 @@ const features = [
   },
   {
     icon: Grid3X3,
-    title: "Multiple Encodings",
-    description: "7 encoders: Angle, Amplitude, Basis, IQP, Entangled Angle, Data Re-uploading, and Hamiltonian. NISQ-safe options included.",
+    title: "13 Encodings",
+    description: "Angle, Amplitude, Basis, IQP, Entangled Angle, Re-Upload, Hamiltonian, ZZFeatureMap, PauliFeatureMap, RandomFourier, TensorProduct, QAOAProblem, GraphState. NISQ-safe options included.",
   },
   {
     icon: Binary,
     title: "QUBO Support",
-    description: "7 problem formulations (Max-Cut, TSP, Knapsack, Portfolio, and more), exact and SA solvers, QAOA circuit generation, and D-Wave export.",
+    description: "7 problem formulations (Max-Cut, TSP, Knapsack, Portfolio, and more), QAOA circuit generation, and D-Wave export.",
   },
   {
     icon: ShieldCheck,
     title: "Validation & Cost",
     description: "Schema enforcement, per-column NaN reports, and formula-accurate circuit cost estimates (gate count, depth, NISQ-safe flag) — before encoding.",
+  },
+  {
+    icon: Database,
+    title: "Data Connectors",
+    description: "Load any public dataset in one line — HuggingFace Hub, OpenML, and Kaggle. Auto-detects tabular, image, text, and graph modalities.",
+  },
+  {
+    icon: Terminal,
+    title: "CLI & Reproducibility",
+    description: "Profile datasets and benchmark all encoders from the terminal. Lock in your pipeline config with a deterministic SHA-256 fingerprint for paper methods sections.",
+  },
+  {
+    icon: Layers,
+    title: "Data Modalities",
+    description: "Native support for time series, sparse matrices, multi-label, images, text (TF-IDF + embeddings), and graphs — all feeding into the same encoders and exporters.",
   },
 ];
 

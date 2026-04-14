@@ -77,19 +77,15 @@ result.summary()               # aligned audit table`,
     id: "qubo",
     label: "QUBO",
     code: `import numpy as np
-from quprep.qubo import max_cut, solve_brute, qaoa_circuit
+from quprep.qubo import max_cut, qaoa_circuit
 
 # Max-Cut on a graph
 adj = np.array([[0,1,1],[1,0,1],[1,1,0]], dtype=float)
 q = max_cut(adj)
 
-# Exact solver (n ≤ 20) or simulated annealing
-sol = solve_brute(q)
-print(sol.x)       # optimal binary vector
-print(sol.energy)  # -2.0
-
 # Generate a QAOA circuit (OpenQASM 3.0)
-qasm = qaoa_circuit(q, p=2)`,
+qasm = qaoa_circuit(q, p=2)
+print(qasm)`,
   },
 ];
 

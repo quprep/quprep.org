@@ -38,8 +38,7 @@ for i, enc in enumerate(result.encoded):
 
 # Or get a Qiskit QuantumCircuit
 # pip install quprep[qiskit]
-from quprep.export.qiskit_export import QiskitExporter
-qc = QiskitExporter().export(result.encoded[0])`,
+qc = qd.QiskitExporter().export(result.encoded[0])`,
   },
 ];
 
