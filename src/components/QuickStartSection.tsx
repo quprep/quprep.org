@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Copy, Check, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { highlightPython } from "../lib/highlightPython";
 
 const steps = [
   {
@@ -31,14 +32,16 @@ print(result.circuit)`,
     title: "Export",
     code: `import quprep as qd
 
-# All exporters are on the top-level namespace
+# QASMExporter is on the top-level namespace
 exporter = qd.QASMExporter()
 for i, enc in enumerate(result.encoded):
     exporter.save(enc, f"circuit_{i}.qasm")
 
-# Or get a Qiskit QuantumCircuit
+# Or get a Qiskit QuantumCircuit in one line
 # pip install quprep[qiskit]
-qc = qd.QiskitExporter().export(result.encoded[0])`,
+qc = qd.prepare(
+    "my_data.csv", encoding="angle", framework="qiskit"
+).circuits[0]`,
   },
 ];
 
@@ -98,15 +101,7 @@ const QuickStartSection = () => {
                   </button>
                 </div>
                 <pre className="p-4 overflow-x-auto text-sm font-mono leading-relaxed">
-                  {s.code.split("\n").map((line, i) => (
-                    <div key={i}>
-                      {line.trimStart().startsWith("#") ? (
-                        <span className="text-muted-foreground/50">{line}</span>
-                      ) : (
-                        <span className="text-foreground">{line}</span>
-                      )}
-                    </div>
-                  ))}
+                  {highlightPython(s.code, false)}
                 </pre>
               </div>
             </motion.div>

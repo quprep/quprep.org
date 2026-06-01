@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { highlightPython } from "../lib/highlightPython";
 
 const tabs = [
   {
@@ -48,7 +49,10 @@ print(rec.method)       # e.g. "iqp"
 print(rec.reason)       # human-readable explanation
 print(rec.alternatives) # ranked list of other options
 
-result = rec.apply("dataset.csv")`,
+# Build and run the recommended pipeline
+result = qd.suggest_pipeline(
+    "dataset.csv", task="classification", qubits=8
+).build().fit_transform("dataset.csv")`,
   },
   {
     id: "validate",
@@ -89,44 +93,6 @@ print(qasm)`,
   },
 ];
 
-function highlightPython(code: string) {
-  return code.split("\n").map((line, i) => {
-    let content: React.ReactNode;
-
-    if (line.trimStart().startsWith("#")) {
-      content = <span className="text-muted-foreground/50">{line}</span>;
-    } else {
-      // Simple keyword highlighting
-      const highlighted = line
-        .replace(/(from |import |print|def |class |return |if |for |in )/g, '§kw§$1§/kw§')
-        .replace(/"([^"]*)"/g, '§str§"$1"§/str§')
-        .replace(/'([^']*)'/g, "§str§'$1'§/str§");
-
-      const parts = highlighted.split(/§(kw|str|\/kw|\/str)§/);
-      let inKeyword = false;
-      let inString = false;
-
-      content = parts.map((part, j) => {
-        if (part === 'kw') { inKeyword = true; return null; }
-        if (part === '/kw') { inKeyword = false; return null; }
-        if (part === 'str') { inString = true; return null; }
-        if (part === '/str') { inString = false; return null; }
-        if (inKeyword) return <span key={j} className="text-primary">{part}</span>;
-        if (inString) return <span key={j} className="text-accent">{part}</span>;
-        return <span key={j} className="text-foreground">{part}</span>;
-      });
-    }
-
-    return (
-      <div key={i} className="flex">
-        <span className="select-none text-muted-foreground/30 w-7 shrink-0 text-right mr-4 text-xs leading-6">
-          {i + 1}
-        </span>
-        <span className="leading-6">{content}</span>
-      </div>
-    );
-  });
-}
 
 const CodeExamplesSection = () => {
   const [activeTab, setActiveTab] = useState("simple");

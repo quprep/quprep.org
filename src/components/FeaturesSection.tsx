@@ -10,17 +10,17 @@ const features = [
   {
     icon: Sparkles,
     title: "Smart Encoding",
-    description: "Auto-selects the correct normalizer per encoding. Recommendation engine scores all 13 encoders against your dataset and task.",
+    description: "Auto-selects the correct normalizer per encoding. Recommendation engine scores all 15 encoders against your dataset and task.",
   },
   {
     icon: Cpu,
     title: "Hardware Aware",
-    description: "Hardware-aware dimensionality reduction for IBM, Google, IQM, and Quantinuum devices. Automatically fits your qubit budget.",
+    description: "Hardware-aware dimensionality reduction for IBM, IonQ, IQM, and Quantinuum devices. Automatically fits your qubit budget.",
   },
   {
     icon: Grid3X3,
-    title: "13 Encodings",
-    description: "Angle, Amplitude, Basis, IQP, Entangled Angle, Re-Upload, Hamiltonian, ZZFeatureMap, PauliFeatureMap, RandomFourier, TensorProduct, QAOAProblem, GraphState. NISQ-safe options included.",
+    title: "15 Encodings",
+    description: "Angle, Amplitude, Basis, IQP, Entangled Angle, Re-Upload, Hamiltonian, ZZFeatureMap, PauliFeatureMap, RandomFourier, TensorProduct, QAOAProblem, GraphState, DenseAngle, Discretized. NISQ-safe options included.",
   },
   {
     icon: Binary,

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, BookOpen, Package, Star, Copy, Check } from "lucide-react";
 import { useState } from "react";
+import { highlightPython } from "../lib/highlightPython";
 
 const HeroSection = () => {
   const [copied, setCopied] = useState(false);
@@ -26,7 +27,7 @@ const HeroSection = () => {
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 mb-8">
-            <span className="text-xs font-mono text-primary font-medium">v0.8.0</span>
+            <span className="text-xs font-mono text-primary font-medium">v0.10.0</span>
             <span className="h-3 w-px bg-border" />
             <span className="text-xs text-muted-foreground">Open Source · Apache 2.0</span>
           </div>
@@ -60,30 +61,15 @@ const HeroSection = () => {
                 <div className="text-muted-foreground">
                   <span className="text-accent">$</span> pip install quprep
                 </div>
-                <div className="mt-3 text-muted-foreground/50 text-xs">{"# Three lines to quantum-ready data"}</div>
-                <div>
-                  <span className="text-primary">import</span>
-                  <span className="text-foreground"> quprep </span>
-                  <span className="text-primary">as</span>
-                  <span className="text-foreground"> qd</span>
-                </div>
-                <div>
-                  <span className="text-foreground">circuit</span>
-                  <span className="text-muted-foreground"> = </span>
-                  <span className="text-foreground">qd</span>
-                  <span className="text-muted-foreground">.</span>
-                  <span className="text-foreground">prepare</span>
-                  <span className="text-muted-foreground">(</span>
-                  <span className="text-accent">"dataset.csv"</span>
-                  <span className="text-muted-foreground">, </span>
-                  <span className="text-foreground">encoding</span>
-                  <span className="text-muted-foreground">=</span>
-                  <span className="text-accent">"angle"</span>
-                  <span className="text-muted-foreground">, </span>
-                  <span className="text-foreground">framework</span>
-                  <span className="text-muted-foreground">=</span>
-                  <span className="text-accent">"qiskit"</span>
-                  <span className="text-muted-foreground">)</span>
+                <div className="mt-2 text-sm">
+                  {highlightPython(
+`# Three lines to quantum-ready data
+import quprep as qd
+circuit = qd.prepare(
+    "dataset.csv",
+    encoding="angle",
+    framework="qiskit",
+)`, false)}
                 </div>
               </div>
             </div>
